@@ -1,5 +1,5 @@
-namespace SalonS.Models;
-using System.Collections;
+namespace SalonS.model;
+
 public class Booking
 {
     public int BookingId { get; set; } // Add this property

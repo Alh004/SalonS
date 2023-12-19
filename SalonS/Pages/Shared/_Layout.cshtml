@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject SalonS.Services.KundeRepository Kunder
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -9,148 +11,140 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/SalonS.styles.css" asp-append-version="true"/>
     <!-- Custom CSS for Barbershop Theme -->
-    <style>
-         body {
-                    background-color: #f8f9fa; /* Main background color */
-                    font-family: 'Roboto', sans-serif;
-                }
+   <style>
+            body {
+                       background-color: #f8f9fa; /* Main background color */
+                       font-family: 'Roboto', sans-serif;
+                   }
+           
+                   /* Side Bars */
+                   .side-bar   {
+                       position: fixed;
+                       top: 0;
+                       bottom: 0;
+                       width: 200px; /* Width of the side bar */
+                       background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
+                       z-index: -1;
+                   }
+                     .side-bar.left {
+                               left: 0;
+                           }
+                           .side-bar.right {
+                               right: 0;
+                           }
+           .navbar {
+               background-color: #000000;
+                           border-bottom: 1px solid #ffffff; /* Thin white line */
+   
+           }
+          
+           .navbar-brand, .nav-link {
+               color: #ffffff;
+           }
+           
+           .navbar .nav-link {
+               color: #ffffff; /* Set link color to white */
+           }
+          
+           .footer {
+               background-color: #000000;
+               
+               color: #ffffff;
+           }
+          
         
-                /* Side Bars */
-                .side-bar   {
-                    position: fixed;
-                    top: 0;
-                    bottom: 0;
-                    width: 200px; /* Width of the side bar */
-                    background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
-                    z-index: -1;
-                }
-                  .side-bar.left {
-                            left: 0;
-                        }
-                        .side-bar.right {
-                            right: 0;
-                        }
-        .navbar {
-            background-color: #000000;
-                        border-bottom: 1px solid #ffffff; /* Thin white line */
+               .hero-section {
+               background-color: transparent;            
+              background-size: cover;
+           padding: 80px 0;
+           text-align: center;
+           color: #000000;
+           }
+           .hero-section h1 {
+           font-size: 3em;
+           margin-bottom: 15px;
+           }
+           .hero-section p {
+           font-size: 1.5em;
+           }
+           .white-background {
+               background-color: #ffffff; /* White background color */
+               /* Add any other styling properties as needed */
+           }
 
-        }
-       
-        .navbar-brand, .nav-link {
-            color: #fff;
-        }
-        
-        .navbar .nav-link {
-            color: #fff; /* Set link color to white */
-        }
-       
-        .footer {
-            background-color: #000000;
-            
-            color: #ffffff;
-        }
-       
-     
-            .hero-section {
-            background-color: transparent;            
-           background-size: cover;
-        padding: 80px 0;
-        text-align: center;
-        color: #000000;
-        }
-        .hero-section h1 {
-        font-size: 3em;
-        margin-bottom: 15px;
-        }
-        .hero-section p {
-        font-size: 1.5em;
-        }
-        
-        
-       .about-section {
-               /* Keep existing styles for padding, background, etc. */
-               color: #000000; /* Change text color to white for the entire section */
-           }
-       
-           /* If you want to specifically target only certain elements, use more specific selectors */
-           .about-section h2, .about-section p {
-               color: #000000;
-           }
-            .about-section p {
-                font-size: 1.2em;
-                /* If necessary, adjust font size and other properties */
-            }
-         </style>
-        </head>
-        <body>
-        <header>
-            <div class="side-bar left"></div>
-            <div class="side-bar right"></div>
-        
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3">
-                <div class="container">
-                    <!-- Navbar Brand -->
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">
-                        <img src="~/Images/PNG.png" alt="SalonS Logo" style="height: 110px; width: 170px;">
-                    </a>
-                    <!-- Navbar Toggler -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                        
-                        
-                    <!-- Navbar Links -->
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-column flex-md-row justify-content-between">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/AdminMappe/BookingListe">"Admin"</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/LoginSide/Login">Account</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/BookingMappe/Opretbooking">Booking</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/BookingMappe/Confirmation">Min Booking</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        
-        
-        <div class="hero-section">
+           
+           
+          .about-section {
+                  /* Keep existing styles for padding, background, etc. */
+                  color: #000000; /* Change text color to white for the entire section */
+              }
+          
+              /* If you want to specifically target only certain elements, use more specific selectors */
+              .about-section h2, .about-section p {
+                  color: #000000;
+              }
+               .about-section p {
+                   font-size: 1.2em;
+                   /* If necessary, adjust font size and other properties */
+               }
+               .white-link {
+                   color: #ffffff; /* White text color */
+                   /* Add any other styling properties as needed */
+               }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3">
         <div class="container">
-            <h1>Velkommen til SalonS</h1>
-            <p>Din eksklusive barberoplevelse starter her</p>
-        </div>
-    </div>
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            <!-- About Section -->
-            <div class="about-section">
-                <h2>Om SalonS</h2>
-                <p>SalonS tilbyder en enestående barberoplevelse i hjertet af byen. Med vores erfarne barbere og afslappende atmosfære, er vi dedikeret til at give dig den bedste service.</p>
-                <!-- Additional content about the barbershop -->
+            <!-- Replacing 'SalonS' text with a logo -->
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <img src="~/Images/PNG.png" alt="SalonS Logo" style="height: 110px; width: 170px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-column flex-md-row justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        
+                        
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                            <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Opretbooking">Booking Nu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Confirmation">Min Booking</a>
+                        </li>
+                        @if (Kunder.KundeLoggedIn is not null && Kunder.KundeLoggedIn.IsAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link white-link" asp-area="" asp-page="/AdminMappe/BookingListe">Admin</a>
+                            </li>
+                        }
+                        @if (Kunder.KundeLoggedIn is not null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link white-link" asp-area="" asp-page="/Logout">Logout</a>
+                            </li>
+                        }
+                    </ul>
             </div>
-
-            <!-- Include other sections like Slideshow, Barber Information, Opening Times -->
-            <!-- ... -->
-        </main>
-    </div>
-
+        </div>
+    </nav>
+</header>
+<div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
-
+</div>
 
 <footer class="border-top footer text-muted">
     <div class="container text-center py-3">
-        &copy; 2023 - SalonS - <a asp-area="" asp-page="/Loginside/ConfirmLogout">Log Ud</a>
         <!-- Additional Footer Content -->
     </div>
 </footer>

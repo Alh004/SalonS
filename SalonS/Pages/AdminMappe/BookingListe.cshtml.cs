@@ -15,8 +15,8 @@ namespace SalonS.Pages.AdminMappe
             _kundeRepository = kundeRepository;
         }
 
-        public List<Models.Booking?> Bookings { get; set; }
-        public List<Models.Kunde> Kunder { get; set; }
+        public List<model.Booking?> Bookings { get; set; }
+        public List<model.Kunde> Kunder { get; set; }
 
         [BindProperty]
         public string Navn { get; set; }

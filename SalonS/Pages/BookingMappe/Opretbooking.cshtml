@@ -3,54 +3,62 @@
 
 <h2>Book an Appointment</h2>
 
-@if (!string.IsNullOrEmpty(Model.ErrorMessage))
-{
-    <div class="error-message" style="color:red;">
-        @Model.ErrorMessage
-    </div>
-}
+<div class="container mt-4">
+    <h2 class="mb-3">Book En Tid</h2>
 
-<form method="post">
-    <div>
-        <label for="service">Choose a Service:</label>
-        <select id="service" name="NewBooking.Klip">
-            <option value="Klipning med skæg">Klipning med skæg</option>
-            <option value="Klipning uden skæg">Klipning uden skæg</option>
-        </select>
-    </div>
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.ErrorMessage
+        </div>
+    }
 
-    <div>
-        <label for="frisør">Choose Barber:</label>
-        <select id="frisør" name="NewBooking.Frisør">
-            <option value="Ali the Barber">Ali the Barber</option>
-            <option value="Dani the Barber">Dani the Barber</option>
-        </select>
-    </div>
+    <form method="post">
+        <!-- Service selection -->
+        <div class="mb-3">
+            <label for="service" class="form-label">Vælg en KlippeType:</label>
+            <select id="service" class="form-select" name="NewBooking.Klip">
+                <option value="Klipning med skæg">Klipning med skæg</option>
+                <option value="Klipning uden skæg">Klipning uden skæg</option>
+            </select>
+        </div>
 
-    <div>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="NewBooking.Dato" required>
-    </div>
+        <!-- Barber selection -->
+        <div class="mb-3">
+            <label for="frisør" class="form-label">Vælg En Frisør:</label>
+            <select id="frisør" class="form-select" name="NewBooking.Frisør">
+                <option value="Ali the Barber">Ali the Barber</option>
+                <option value="Dani the Barber">Dani the Barber</option>
+            </select>
+        </div>
 
-    <div>
-        <label for="time">Time:</label>
-        <select id="time" name="NewBooking.Tid">
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-        </select>
-    </div>
+        <!-- Date selection -->
+        <div class="mb-3">
+            <label for="date" class="form-label">Vælg En Dato:</label>
+            <input type="date" id="date" class="form-control" name="NewBooking.Dato" required>
+        </div>
 
-    <div>
-        <input type="hidden" name="NewBooking.Pris" value="300">
-        <label>Price: 300</label>
-    </div>
+        <!-- Time selection -->
+        <div class="mb-3">
+            <label for="time" class="form-label">Vælg En Tid:</label>
+            <select id="time" class="form-select" name="NewBooking.Tid">
+                <!-- Time options -->
+                @for (var hour = 11; hour <= 17; hour++)
+                {
+                    <option value="@hour:00">@hour:00</option>
+                }
+            </select>
+        </div>
 
-    <div>
-        <input type="submit" value="Book Now">
-    </div>
-</form>
+        <!-- Price display -->
+        <div class="mb-3">
+            <label class="form-label">Price: <strong>300 DKK</strong></label>
+            <input type="hidden" name="NewBooking.Pris" value="300">
+        </div>
+
+        <!-- Submit button -->
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Book En Tid Nu</button>
+        </div>
+    </form>
+</div>

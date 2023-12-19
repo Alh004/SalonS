@@ -1,5 +1,3 @@
-using SalonS.Models;
-
 namespace SalonS.Services
 {
     public class BookingRepository : IBookingRepository

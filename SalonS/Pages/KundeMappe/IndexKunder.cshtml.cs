@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SalonS.Services;
 
-namespace SalonS.Pages.Kunde;
+namespace SalonS.Pages.KundeMappe;
 
 public class IndexKunderModel : PageModel
 {
     private IKundeRepository _kunde;
 
-    public Models.Kunde KundeLoggedIn { get; private set; }
+    public model.Kunde KundeLoggedIn { get; private set; }
 
     public IndexKunderModel(IKundeRepository users)
     {

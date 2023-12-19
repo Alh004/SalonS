@@ -2,23 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SalonS.Services;
 
-namespace SalonS.Pages
-
+namespace SalonSNy.Pages.LoginMappe
 {
     public class LogoutModel : PageModel
     {
-        private readonly IKundeRepository _kundeRepository;
+        private KundeRepository _kundeRepository;
 
-        public LogoutModel(IKundeRepository kundeRepository)
+        public LogoutModel(KundeRepository kundeRepository)
         {
             _kundeRepository = kundeRepository;
         }
 
-        public RedirectToPageResult OnGet()
+        public IActionResult OnGet()
         {
             _kundeRepository.LogoutKunde();
 
-            return RedirectToPage("ConfirmLogout");
+            return RedirectToPage("Index");
         }
     }
 }

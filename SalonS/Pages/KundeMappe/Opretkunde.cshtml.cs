@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SalonS.Models; // Ensure this namespace is correct for your Kunde model
-using SalonS.Services; // Ensure this namespace is correct for your KundeRepository
+// Ensure this namespace is correct for your Kunde model
+using SalonS.Services;
+using static SalonS.model.Kunde; // Ensure this namespace is correct for your KundeRepository
 
 namespace SalonS.Pages.Kunde
 {
@@ -39,7 +40,7 @@ namespace SalonS.Pages.Kunde
             }
 
             // Create a new Kunde instance
-            var newKunde = new Models.Kunde()
+            var newKunde = new model.Kunde()
             {
                 Navn = Navn,
                 Tlf = Tlf,

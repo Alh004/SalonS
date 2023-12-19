@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SalonS.Models;
+using SalonS.model;
 using SalonS.Services;
 
 public class BookingModel : PageModel
