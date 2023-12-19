@@ -5,6 +5,7 @@
 }
 @{
 }
+    <link rel="shortcut icon" href="~/wwwroot/favicon_package_v0/favicon.ico" type="image/x-icon">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,87 +15,74 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="side-bar left"></div>
+<div class="side-bar right"></div>
 
-    <section id="hero">
-        <h1>Welcome to XYZ Barbershop</h1>
-        <p>Your go-to destination for top-notch grooming services.</p>
-    </section>
+<section id="about">
+    <div class="container">
+        <h2>Om Salon S</h2>
+        <p>Velkommen til vores eksklusive frisørsalon i Danmark, hvor vi mestrer fades som ingen andre. Vores erfarne barberere skaber skarpe og stilfulde fades, der passer perfekt til din stil. Vi tilbyder også skægpleje, trimninger og personlig rådgivning. Besøg os i dag og oplev, hvordan vi løfter dit udseende til nye højder.</p>
+    </div>
+</section>
 
-    <section id="about">
-        <div class="container">
-            <div class="about-info">
-                <h2>About Our Barber</h2>
-                <p>Meet our skilled barber, John Doe. With over 10 years of experience, John is dedicated to providing the best grooming services for our clients. He specializes in modern and classic hairstyles.</p>
-            </div>
-            <div class="barber-image">
-                <!-- Insert an image of the barber here -->
-            </div>
+<section id="barbers">
+    <div class="container">
+        <h2>Mød Vores Frisør</h2>
+        <div class="barber">
+            <img src="~/Images/Abdi1.png" alt="Dani" style="height: 280px; width: 200px;">
+            <h3>Dani</h3>
+            <p>Dani er en ekstremt dygtig barber, der kombinerer klassisk og moderne håndværk med stor lidenskab. Med mange års erfaring i bagagen har han opbygget en enestående ekspertise inden for frisurer og klipning, der gør ham til en eftertragtet mester i sit felt.
+
+                Hans dedikation til at levere enestående klipninger og frisurer er uovertruffen. Dani tager sig altid tid til at lytte til hver enkelt kundes ønsker og behov, og han arbejder hårdt for at opfylde dem til perfektion. Han forstår, at hver person er unik, og det afspejles i hans evne til at skabe skræddersyede looks, der passer til enhver personlighed og stil.</p>
         </div>
-    </section>
 
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-card">
-                <img src="service1.jpg" alt="Service 1">
-                <h3>Haircuts</h3>
-                <p>Choose from a variety of haircut styles to suit your preferences.</p>
-            </div>
-            <div class="service-card">
-                <img src="service2.jpg" alt="Service 2">
-                <h3>Beard Trimming</h3>
-                <p>Get your beard looking sharp and well-groomed.</p>
-            </div>
-            <!-- Add more service cards as needed -->
+        <div class="barber">
+            <img src="~/Images/Abdi2.png" alt="Ali" style="height: 280px; width: 200px;">
+            <h3>Ali</h3>
+            <p>Ali er en barber med en ekstraordinær ekspertise inden for skægpleje og fades. Hans evne til at fokusere på detaljerne og hans dedikation til sit håndværk gør ham til den ultimative valgmulighed for dem, der søger en skarp og stilfuld fremtoning.
+
+                Når det kommer til skægpleje, er Ali en sand mester. Han forstår, at skægget er en vigtig del af en mands udseende, og han lægger stor vægt på at sikre, at det altid ser fejlfrit ud. Hans omhyggelige og præcise teknikker garanterer, at du får det bedst mulige resultat, uanset om du ønsker en velplejet skægstubbe eller en omhyggeligt udformet skægfrisure.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="map">
-        <!-- Embed a map using Google Maps API or other mapping services -->
-    </section>
 
-    <section id="opening-hours">
-        <div class="container">
-            <h2>Opening Hours</h2>
+<section id="opening-hours-and-location">
+    <div class="container">
+        <div class="column opening-hours">
+            <h2>Åbnings Tider</h2>
             <table>
                 <tr>
-                    <td>Monday</td>
-                    <td>9:00 AM - 6:00 PM</td>
+                    <td>Mandag-Fredag</td>
+                    <td>11:00 - 17:00</td>
                 </tr>
                 <tr>
-                    <td>Tuesday</td>
-                    <td>9:00 AM - 6:00 PM</td>
+                    <td>Weekend</td>
+                    <td>11:00 - 17:00</td>
                 </tr>
-                <!-- Add more days and hours as needed -->
+                <tr>
+                    <td>Helligdage</td>
+                    <td>11:00 - 17:00</td>
+                </tr>
             </table>
         </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or want to book an appointment, please don't hesitate to contact us.</p>
-            <p>Email: contact@xyzbarbershop.com</p>
-            <p>Phone: (123) 456-7890</p>
+        <div class="column location">
+            <h2>Lokation</h2>
+            <div id="map">
+                <!-- Embed a map using Google Maps API or other mapping services -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.215166392158!2d-122.08375538468613!3d37.38605157984285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbee6d60c1e53%3A0x9356c8ff00f9eb51!2sBarber%20Shop!5e0!3m2!1sen!2sus!4v1644534988892!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 XYZ Barbershop</p>
-        </div>
-    </footer>
 
-    <!-- Add your JavaScript for interactivity if needed -->
+<footer class="border-top footer text-muted fixed-bottom">
+    <div class="container text-center py-3">
+        <p>Contact: contact@salonsS.com</p>
+    </div>
+</footer>
 
+<!-- Add your JavaScript for interactivity if needed -->
 </body>
 </html>

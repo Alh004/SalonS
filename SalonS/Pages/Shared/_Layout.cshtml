@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
+<link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Book Your Time - SalonS</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:400,700" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
@@ -16,14 +16,17 @@
                        background-color: #f8f9fa; /* Main background color */
                        font-family: 'Roboto', sans-serif;
                    }
-           
+                   
+
+    
                    /* Side Bars */
                    .side-bar   {
                        position: fixed;
                        top: 0;
                        bottom: 0;
                        width: 200px; /* Width of the side bar */
-                       background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
+                      background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
+                       height: 100%; /* Full height */
                        z-index: -1;
                    }
                      .side-bar.left {
@@ -32,19 +35,26 @@
                            .side-bar.right {
                                right: 0;
                            }
-           .navbar {
-               background-color: #000000;
+                        .navbar {
+                           background-color: #000000;
                            border-bottom: 1px solid #ffffff; /* Thin white line */
-   
-           }
-          
-           .navbar-brand, .nav-link {
-               color: #ffffff;
-           }
+                           padding: 2px 0; /* Adjust top and bottom padding */
+                       }
            
-           .navbar .nav-link {
-               color: #ffffff; /* Set link color to white */
-           }
+                       .navbar-brand, .nav-link {
+                           color: #ffffff;
+                       }
+           
+                       .navbar .nav-link {
+                           color: #ffffff !important; /* Set link color to white */
+                           font-size: 17px; /* Adjust font size */
+                           padding: 10px 15px; /* Adjust link padding */
+                       }
+           
+                       .navbar-toggler-icon {
+                           background-color: #ffffff; /* Set the color of the toggle button */
+                       }
+
           
            .footer {
                background-color: #000000;
@@ -56,12 +66,12 @@
                .hero-section {
                background-color: transparent;            
               background-size: cover;
-           padding: 80px 0;
+           padding: 50px 0;
            text-align: center;
            color: #000000;
            }
            .hero-section h1 {
-           font-size: 3em;
+           font-size: 2em;
            margin-bottom: 15px;
            }
            .hero-section p {
@@ -71,6 +81,10 @@
                background-color: #ffffff; /* White background color */
                /* Add any other styling properties as needed */
            }
+           .white-link {
+                           color: #ffffff !important; /* White text color */
+                           /* Add any other styling properties as needed */
+                       }
 
            
            
@@ -115,15 +129,19 @@
                     </li>
                     <li class="nav-item">
                     <li class="nav-item">
-                            <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Opretbooking">Booking Nu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Confirmation">Min Booking</a>
-                        </li>
+                               <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Opretbooking">
+                                   <i class="fas fa-book"></i> Book Nu
+                               </a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link white-link" asp-area="" asp-page="/BookingMappe/Confirmation">
+                                   <i class="fas fa-calendar-check"></i> Min Booking
+                               </a>
+                           </li>
                         @if (Kunder.KundeLoggedIn is not null && Kunder.KundeLoggedIn.IsAdmin)
                         {
                             <li class="nav-item">
-                                <a class="nav-link white-link" asp-area="" asp-page="/AdminMappe/BookingListe">Admin</a>
+                                <a class="nav-link white-link" asp-area="" asp-page="/AdminMappe/BookingListe">BookingListe</a>
                             </li>
                         }
                         @if (Kunder.KundeLoggedIn is not null)
@@ -143,11 +161,12 @@
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer class="border-top footer text-muted fixed-bottom">
     <div class="container text-center py-3">
-        <!-- Additional Footer Content -->
+        <p>Contact: contact@salonsS.com</p>
     </div>
 </footer>
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,24 @@
 @page
 @model BookingModel
+<style>
+.side-bar   {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 200px; /* Width of the side bar */
+      background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
+      z-index: -1;
+    }
+    .side-bar.left {
+      left: 0;
+    }
+    .side-bar.right {
+      right: 0;
+    }
 
+</style>
+<div class="side-bar left"></div>
+            <div class="side-bar right"></div>
 <h2>Book an Appointment</h2>
 
 <div class="container mt-4">

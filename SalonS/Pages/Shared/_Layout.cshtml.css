@@ -46,3 +46,106 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+/* CSS for the slideshow */
+   /* CSS for centering the first two images */
+ .container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+ }
+
+.fade-slide {
+  margin: 20px 0;
+}
+
+/* CSS for the opening hours and map */
+.column {
+  flex: 1;
+  margin: 20px;
+}
+
+#map {
+  width: 150%;
+  height: 450px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* CSS for the main content */
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.check-out {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.left-align {
+  margin-right: auto;
+}
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.check-out {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.left-align {
+  margin-right: auto;
+}
+
+.center-align {
+  text-align: center;
+}
+.side-bar {
+  position: fixed;
+  top: 0;
+  /* Adjust the height to make the sidebar fill out to the bottom */
+  bottom: 0;
+  width: 250px; /* Width of the side bar */
+  background: url('https://cdn3.vectorstock.com/i/1000x1000/88/07/seamless-pattern-for-barbershop-black-background-vector-18098807.jpg') repeat-y center center;
+  z-index: -1;
+}
+
+.side-bar.left {
+  left: 0;
+}
+
+.side-bar.right {
+  right: 0;
+}

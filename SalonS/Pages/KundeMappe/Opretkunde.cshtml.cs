@@ -46,13 +46,14 @@ namespace SalonS.Pages.Kunde
                 Tlf = Tlf,
                 Email = Email,
                 Adgangskode = Adgangskode // Consider hashing this password
+                
             };
 
             // Save the new customer using the repository
             _kundeRepo.AddKunde(newKunde);
 
             // Redirect to the booking creation page
-            return RedirectToPage("/Loginside/Login");
+            return RedirectToPage("/Login");
         }
     }
 }

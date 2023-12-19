@@ -33,7 +33,7 @@ public class BookingModel : PageModel
 
         if (_kundeRepo.KundeLoggedIn == null)
         {
-            ErrorMessage = "You must be logged in to make a booking.";
+            ErrorMessage = "Du skal være logget ind for at booke en tid.";
             return Page(); // Stay on the same page to show the error message
         }
 

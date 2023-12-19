@@ -17,13 +17,13 @@ public class KundeRepository : IKundeRepository
         {
 
             // Add mock Kunde
-            _kunder.Add(new Kunde(1, "ali", "4254231", "test.dk", "ggg", true));
+            _kunder.Add(new Kunde(1, "Admin", "42659793", "admin@.dk", "ggg", true));
             // ... other Kunde ...
-            _kunder.Add(new Kunde(2, "Dani", "4254231", "test.dk2", "ggg2", false));
+            _kunder.Add(new Kunde(2, "Ali", "42659793", "ali@.dk", "ggg2", false));
             // ... other Kunde ...
-            _kunder.Add(new Kunde(3, "Saad", "4254231", "test.dk4", "ggg4", false));
+            _kunder.Add(new Kunde(3, "Saad", "4254231", "test@3.dk4", "ggg3", false));
             // ... other Kunde ...
-            _kunder.Add(new Kunde(4, "Abdi", "4254231", "test.dk4", "ggg3", false));
+            _kunder.Add(new Kunde(4, "Abdi", "4254231", "test@4.dk4", "ggg4", false));
             // ... other Kunde ...
 
             // Add mock Admin
