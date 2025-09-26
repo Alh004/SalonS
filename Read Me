@@ -1,0 +1,32 @@
+SalonS – Razor Pages demo 
+
+
+LOGIN TIL KUNDE ali@.dk - ggg2
+
+LOGIN TIL ADMIN admin@.dk - ggg
+
+ASP.NET Core Razor Pages app til en salon, hvor kunder kan håndtere bookinger og en admin kan få overblik. Løsningen er bygget med Dependency Injection, så forretningen (kundedata/bookingdata) ligger i repositories frem for i UI-laget.
+Repositories registreres som singletons i Program.cs, så de er nemme at udskifte med en rigtig database senere. 
+
+Program
+
+Funktioner
+
+Kunde-login: Adgang til at oprette/ændre/slette egne bookinger.
+
+Admin-login: Adgang til at se alle bookinger/kunder og udføre administrative handlinger.
+
+Razor Pages UI: Hurtig sidebaseret struktur med Pages og backing PageModels.
+
+Repositories: IKundeRepository og IBookingRepository injiceres som services, så PageModels kan kalde metoder som fx FindKundeAsync, CreateBookingAsync, UpdateBookingAsync osv. konfigureret i Program.cs
+
+
+Teknologi & arkitektur
+
+ASP.NET Core Razor Pages aktiveret via builder.Services.AddRazorPages() og mappet med app.MapRazorPages(). 
+
+
+Dependency Injection (DI): Repositories registreres som singletons:
+
+builder.Services.AddSingleton<IKundeRepository>(new KundeRepository(true));
+builder.Services.AddSingleton<IBookingRepository>(new BookingRepository(true)
