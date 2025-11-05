@@ -1,32 +1,36 @@
-SalonS – Razor Pages demo 
+SalonS – ASP.NET Core Razor Pages Demo
+A simple salon booking system with login access for both customers and administrators. Built using modern .NET principles such as Razor Pages and Dependency Injection.
 
+Login Credentials
+Customer login: ali@.dk / ggg2
 
-LOGIN TIL KUNDE ali@.dk - ggg2
+Admin login: admin@.dk / ggg
 
-LOGIN TIL ADMIN admin@.dk - ggg
+Features
+Customer Portal: Create, edit, and delete personal bookings
 
-ASP.NET Core Razor Pages app til en salon, hvor kunder kan håndtere bookinger og en admin kan få overblik. Løsningen er bygget med Dependency Injection, så forretningen (kundedata/bookingdata) ligger i repositories frem for i UI-laget.
-Repositories registreres som singletons i Program.cs, så de er nemme at udskifte med en rigtig database senere. 
+Admin Portal: View all bookings and customer data, perform administrative actions
 
-Program
+Razor Pages UI: Fast, page-based structure using Pages and backing PageModels
 
-Funktioner
+Repositories:
 
-Kunde-login: Adgang til at oprette/ændre/slette egne bookinger.
+IKundeRepository and IBookingRepository are injected as services
 
-Admin-login: Adgang til at se alle bookinger/kunder og udføre administrative handlinger.
+PageModels use methods like FindKundeAsync, CreateBookingAsync, UpdateBookingAsync, etc.
 
-Razor Pages UI: Hurtig sidebaseret struktur med Pages og backing PageModels.
+Technology and Architecture
+ASP.NET Core Razor Pages
 
-Repositories: IKundeRepository og IBookingRepository injiceres som services, så PageModels kan kalde metoder som fx FindKundeAsync, CreateBookingAsync, UpdateBookingAsync osv. konfigureret i Program.cs
+Enabled via: builder.Services.AddRazorPages()
 
+Mapped with: app.MapRazorPages()
 
-Teknologi & arkitektur
+Dependency Injection
 
-ASP.NET Core Razor Pages aktiveret via builder.Services.AddRazorPages() og mappet med app.MapRazorPages(). 
+Repositories registered as singletons:
 
-
-Dependency Injection (DI): Repositories registreres som singletons:
-
+csharp
 builder.Services.AddSingleton<IKundeRepository>(new KundeRepository(true));
-builder.Services.AddSingleton<IBookingRepository>(new BookingRepository(true)
+builder.Services.AddSingleton<IBookingRepository>(new BookingRepository(true));
+Easy to replace with a real database later
